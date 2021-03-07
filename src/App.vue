@@ -7,7 +7,7 @@
         <input
           type="text"
           v-model="inputUsername"
-          placeholder="Írj be egy felhasználónevet..."
+          placeholder="Írd be a felhasználóneved..."
         />
         <input
         type="submit"
