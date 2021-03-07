@@ -2,16 +2,16 @@
   <div class="view login" v-if="state.username === '' || state.username === null">
     <form class="login-form" v-on:submit.prevent="Login">
       <div class="form-inner">
-        <h1>Login to Shift (beta)</h1>
-        <label for="username">Username</label>
+        <h1>Shift</h1>
+        <label for="username">A neved</label>
         <input
           type="text"
           v-model="inputUsername"
-          placeholder="Please enter your username..."
+          placeholder="Írj be egy felhasználónevet..."
         />
         <input
         type="submit"
-        value="Login"
+        value="Belépés"
         />
       </div>
     </form>
@@ -19,8 +19,8 @@
 
   <div class="view chat" v-else>
     <header>
-      <button class="logout" v-on:click="Logout">Log out</button>
-      <h1>Welcome, {{ state.username }}</h1>
+      <button class="logout" v-on:click="Logout">Kilépés</button>
+      <h1>Szia, {{ state.username }}</h1>
     </header>
 
     <section class="chat-box">
@@ -41,9 +41,9 @@
         <input
         type="text"
         v-model="inputMessage"
-        placeholder="Write a message here" 
+        placeholder="Ide írhatod az üzeneted" 
         />
-        <input type="submit" value="Send">
+        <input type="submit" value="Küldés">
       </form>
     </footer>
   </div>
