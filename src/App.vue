@@ -257,8 +257,13 @@ export default {
 					.content {
 						display: inline-block;
 						padding: 10px 20px;
+            word-break: break-word;
+            white-space: pre-wrap;
 						background-color: #F3F3F3;
-						border-radius: 999px;
+						border-bottom-right-radius: 18px;
+            border-bottom-left-radius: 18px;
+            border-top-right-radius: 18px;
+            border-top-left-radius: 18px;
 						color: #333;
 						font-size: 18px;
 						line-height: 1.2em;
@@ -274,7 +279,8 @@ export default {
 						.content {
 							color: #FFF;
 							font-weight: 600;
-							background-color: #ea526f;
+							//background-color: #ea526f;
+              background-color: #0099ff;
 						}
 					}
 				}
