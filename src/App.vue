@@ -23,7 +23,7 @@
       <h1>Szia, {{ state.username }}</h1>
     </header>
 
-    <section class="chat-box">
+    <section class="chat-box" id="messages">
       <div
       v-for="message in state.messages" 
       v-bind:key="message.key"
@@ -54,7 +54,9 @@ import { reactive, onMounted, ref } from 'vue';
 import db from './db';
 
 export default {
+
   setup() {
+
     const inputUsername = ref("");
     const inputMessage = ref("");
 
@@ -98,6 +100,7 @@ export default {
         let messages = [];
 
         Object.keys(data).forEach(key => {
+          console.log(data[key].content)
           messages.push({
             id: key,
             username: data[key].username,
@@ -145,19 +148,19 @@ export default {
  
 			.form-inner {
 				display: block;
-				background-color: #FFF;
+				background-color: rgb(28, 28, 28);
 				padding: 50px 15px;
 				border-radius: 16px;
 				box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 				h1 {
-					color: #AAA;
+					color: #ea526e7c;
 					font-size: 28px;
 					margin-bottom: 30px;
 				}
 				label {
 					display: block;
 					margin-bottom: 5px;
-					color: #AAA;
+					color: rgba(255, 255, 255, 0.178);;
 					font-size: 16px;
 					transition: 0.4s;
 				}
@@ -172,13 +175,13 @@ export default {
 					border-radius: 8px;
 					margin-bottom: 15px;
  
-					color: #333;
+					color: rgb(255, 255, 255);
 					font-size: 18px;
 					box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
-					background-color: #F3F3F3;
+					background-color: #1f1f1f;
 					transition: 0.4s;
 					&::placeholder {
-						color: #888;
+						color: rgba(255, 255, 255, 0.185);
 						transition: 0.4s;
 					}
 				}
@@ -190,7 +193,7 @@ export default {
 					display: block;
 					width: 100%;
 					padding: 10px 15px;
-					background-color: #ea526f;
+					background-color: rgb(0, 153, 255);
 					border-radius: 8px;
 					color: #FFF;
 					font-size: 18px;
@@ -201,10 +204,10 @@ export default {
 						color: #ea526f;
 					}
 					input[type="text"] {
-						background-color: #FFF;
+						background-color: rgb(48, 48, 48);
 						box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
 						&::placeholder {
-							color: #666;
+							color: rgba(255, 255, 255, 0.185);
 						}
 					}
 				}
@@ -238,7 +241,7 @@ export default {
 		}
 		.chat-box {
 			border-radius: 24px 24px 0px 0px;
-			background-color: #FFF;
+			background-color: rgb(26, 26, 26);
 			box-shadow: 0px 0px 12px rgba(100, 100, 100, 0.2);
 			flex: 1 1 100%;
 			padding: 30px;
@@ -259,12 +262,12 @@ export default {
 						padding: 10px 20px;
             word-break: break-word;
             white-space: pre-wrap;
-						background-color: #F3F3F3;
+						background-color: #7272723a;
 						border-bottom-right-radius: 18px;
             border-bottom-left-radius: 18px;
             border-top-right-radius: 18px;
             border-top-left-radius: 18px;
-						color: #333;
+						color: rgb(255, 255, 255);
 						font-size: 18px;
 						line-height: 1.2em;
 						text-align: left;
@@ -289,9 +292,9 @@ export default {
 		footer {
 			position: sticky;
 			bottom: 0px;
-			background-color: #FFF;
+			background-color: rgb(22, 22, 22);
 			padding: 30px;
-			box-shadow: 0px 0px 12px rgba(100, 100, 100, 0.2);
+			box-shadow: 0px 0px 12px rgb(29, 29, 29);
 			form {
 				display: flex;
 				input[type="text"] {
@@ -305,13 +308,13 @@ export default {
 					padding: 10px 15px;
 					border-radius: 8px 0px 0px 8px;
  
-					color: #333;
+					color: rgb(255, 255, 255);
 					font-size: 18px;
-					box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
-					background-color: #F3F3F3;
+					box-shadow: 0px 0px 0px rgb(58, 58, 58);
+					background-color: #111111;
 					transition: 0.4s;
 					&::placeholder {
-						color: #888;
+						color: rgb(53, 53, 53);
 						transition: 0.4s;
 					}
 				}
@@ -325,7 +328,7 @@ export default {
 					padding: 10px 15px;
 					border-radius: 0px 8px 8px 0px;
 					background-color: #ea526f;
-					color: #FFF;
+					color: rgb(255, 255, 255);
 					font-size: 18px;
 					font-weight: 700;
 				}
